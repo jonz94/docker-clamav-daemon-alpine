@@ -15,4 +15,7 @@ VOLUME ["/etc/clamav", "/var/lib/clamav"]
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod 755 /usr/local/bin/docker-entrypoint.sh
 
+COPY conf/clamd.conf /etc/clamav
+COPY conf/freshclam.conf /etc/clamav
+
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
