@@ -1,4 +1,4 @@
-FROM alpine:3.10.3
+FROM alpine:3.11.0
 
 LABEL maintainer="jonz94 <jody16888@gmail.com>"
 
