@@ -6,7 +6,12 @@ LABEL maintainer="jonz94 <jody16888@gmail.com>"
 RUN echo '@edge http://nl.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories
 
 # install clamav & clamav-libunrar (for scan rar files)
-RUN apk add --no-cache clamav@edge clamav-libunrar@edge
+RUN apk add --no-cache \
+    clamav-daemon@edge \
+    clamav-libs@edge \
+    clamav-libunrar@edge \
+    clamav@edge \
+    freshclam@edge
 
 # make clamav running directory
 RUN mkdir -p /run/clamav && chown clamav:clamav /run/clamav
